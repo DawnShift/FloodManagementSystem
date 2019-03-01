@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Welcome</h1>
+            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            <img src="~/Images/51414.jpg" class="img-fluid" alt="Responsive image" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Register</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">We Need Volunteers</h6>
+                    <p class="card-text">
+                        We need people who wants to help in dificult situations.Remember at difficult times rises the real Heros
+                        ,Be one of us help others.
+                    </p>
+                    <a  asp-area="Identity" asp-page="/Account/Register" class="card-link">Register</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Login</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Lets Help People In Need</h6>
+                    <p class="card-text">Already a Member? Login and lets start lending Helping Hand to the People in need.</p>
+                    <a asp-area="Identity" asp-page="/Account/Login" class="card-link">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
