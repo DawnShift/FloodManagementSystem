@@ -1,0 +1,50 @@
+﻿@*@model FloodManagementSystem.ViewModels.MemberHomeViewModel*@
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Welcome State Co-Ordinator</h1>
+        <p class="lead">This is your Navigation Area.</p>
+    </div>
+</div>
+ 
+<div class="row">
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Distribute/Request Resources:
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="row" style="margin:5px;">
+
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Distributed Resources</h5>
+                                <p class="card-text">Here is the List of   Resources Request in your Area.</p>
+                                @Html.ActionLink("Distribute", "GetRequests", "State", null, new { @class = "card-link" })
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Need Help:</h5>
+                                <p class="card-text">request for Additional Resources.</p>
+                                @Html.ActionLink("Add Inventory", "AddInventory", "State", null, new { @class = "card-link" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

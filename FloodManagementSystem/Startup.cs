@@ -1,5 +1,5 @@
 ﻿using FloodManagementSystem.Data;
-using FloodManagementSystem.DataModels;
+using FloodManagementSystem.Data.Models;
 using FloodManagementSystem.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,9 +35,11 @@ namespace FloodManagementSystem
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDbContext<FloodManagementSystemContext>(options =>
-              options.UseSqlServer(
-                  Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<FloodManagementSystemContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            //services.AddDbContext<FloodManagementSystemContext>(options =>
+            //  options.UseSqlServer(
+            //      Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<ApplicationUser, ApplicationRoles>(options => options.Stores.MaxLengthForKeys = 128)
                 .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -77,7 +79,7 @@ namespace FloodManagementSystem
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            //  DummyData.Initialize(context, userManager, roleManager).Wait();
+             //DummyData.Initialize(context, userManager, roleManager).Wait();
         }
     }
 }

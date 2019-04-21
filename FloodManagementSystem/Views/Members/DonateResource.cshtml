@@ -1,0 +1,72 @@
+﻿@model FloodManagementSystem.ViewModels.ResourceModel
+
+@{
+    ViewData["Title"] = "DonateResource";
+}
+
+<h4>DonateResource</h4>
+
+<div class="row">
+    <div class="col-md-6 offset-md-2">
+        <div class="card">
+            <h5 class="card-header">Add Resource Item</h5>
+            <div class="card-body">
+
+                <form asp-action="DonateResource">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group">
+                        <label asp-for="ResourceId" class="control-label"></label>
+                        <select asp-for="ResourceId"
+                                asp-items="@(new SelectList(Model.Resource,"Id","Name")) " class="form-control">
+                            <option>Please select one</option>
+                        </select>
+                        <span asp-validation-for="ResourceId" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="RegionId" class="control-label"></label>
+                        <select asp-for="RegionId"
+                                asp-items="@(new SelectList(Model.EffectedRegion,"Id","Name")) " class="form-control">
+                            <option>Please select one</option>
+                        </select>
+                        <span asp-validation-for="ResourceId" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Count" class="control-label"></label>
+                        <input asp-for="Count" class="form-control" />
+                        <input asp-for="DisasterId" class="form-control"  hidden/> 
+                        <span asp-validation-for="Count" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row" style="margin-top:5px;">
+    @if (@ViewBag.DonateSuccess)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @if (ViewBag.DonateSuccess)
+            {
+                <strong>Resource Donated Successfuly!</strong><p>
+                    The Resource has been Donated Successfuly.
+                </p>
+            }
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

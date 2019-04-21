@@ -1,0 +1,48 @@
+﻿@model FloodManagementSystem.ViewModels.DisasterViewModel
+
+@{
+    ViewData["Title"] = "Disaster";
+}
+
+<h1>Disaster</h1>
+
+<h4>Add Disaster</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Disaster" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="File" class="control-label"></label>
+                <input asp-for="File" class="form-control" />
+                <span asp-validation-for="File" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div style="margin-top:2px;" class="row">
+    @if (@ViewBag.IsSuccess)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @if (ViewBag.IsSuccess)
+            {
+                <strong>Disaster Added Successfuly!</strong><p>
+                    The Disaster has been added Successfuly.
+                </p>
+            }
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,139 @@
+﻿@model FloodManagementSystem.ViewModels.StateViewModel
+
+@{
+    ViewData["Title"] = "State";
+}
+
+<h1>Add Details</h1>
+
+<hr />
+<div class="row">
+
+    <div class="col-md-4">
+        <div class="card">
+            <h5 class="card-header">Add State</h5>
+            <div class="card-body">
+
+                <form asp-action="State">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="States.Name" class="control-label"></label>
+                        <input asp-for="States.Name" class="form-control" />
+                        <span asp-validation-for="States.Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <h5 class="card-header">Add City</h5>
+            <div class="card-body">
+
+                <form asp-action="City">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group">
+                        <label asp-for="City.StateId"></label>
+                        <select asp-for="City.StateId"
+                                asp-items="@(new SelectList(Model.City.State,"Id","Name")) " class="form-control">
+                            <option>Please select one</option>
+                        </select>
+                        <span asp-validation-for="City.StateId" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="City.City" class="control-label"></label>
+                        <input asp-for="City.City" class="form-control" />
+                        <span asp-validation-for="City.City" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <h5 class="card-header">Add Region</h5>
+            <div class="card-body">
+
+                <form asp-action="Region">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group">
+                        <label asp-for="Region.CityId"></label>
+                        <select asp-for="Region.CityId"
+                                asp-items="@(new SelectList(Model.Region.City,"Id","Name")) " class="form-control">
+                            <option>Please select one</option>
+                        </select>
+                        <span asp-validation-for="Region.CityId" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Region.Region" class="control-label"></label>
+                        <input asp-for="Region.Region" class="form-control" />
+                        <span asp-validation-for="Region.Region" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row" style="margin-top:5px;">
+    @if (@ViewBag.StateIsSuccess || @ViewBag.CityIsSuccess || @ViewBag.RegionIsSuccess)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @if (ViewBag.StateIsSuccess)
+            {
+                <strong>State Added Successfuly!</strong><p>
+                    The State has been added Successfuly.
+                </p>
+            }
+            @if (ViewBag.CityIsSuccess)
+            {
+                <strong>City Added Successfuly!</strong><p>
+                    The City has been added Successfuly.
+                </p>
+            }
+            @if (ViewBag.RegionIsSuccess)
+            {
+                <strong>Region Added Successfuly!</strong><p>
+                    The Region has been added Successfuly.
+                </p>
+            }
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $(function () {
+            if (@ViewBag.StateIsSuccess||@ViewBag.CityIsSuccess||@ViewBag.RegionIsSuccess)
+                {
+                   $('.alert').alert();
+                }
+            });
+    </script>
+}

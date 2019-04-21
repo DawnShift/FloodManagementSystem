@@ -1,5 +1,6 @@
 ﻿@page
 @model RegisterModel
+@using Newtonsoft.Json;
 @{
     ViewData["Title"] = "Register";
 }
@@ -10,7 +11,11 @@
         <h4>Create a new account.</h4>
         <hr />
         <div class="row">
-            @*<div asp-validation-summary="All" class="text-danger"></div>*@
+            <div asp-validation-summary="All" class="text-danger"></div>
+        </div>
+        <div class="row">
+
+           
             <div class="col-md-4">
 
                 <div class="form-group">
@@ -39,7 +44,7 @@
                     <span asp-validation-for="Input.LastName" class="text-danger"></span>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Register</button>
+
             </div>
             <div class="offset-md-2 col-md-4">
                 <div class="form-group">
@@ -49,29 +54,33 @@
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Input.Country"></label>
-                    <select asp-for="Input.Country"
-                            asp-items="@(new SelectList(Model.CountryList,"Id","Name")) " class="form-control">
-                        <option value="0">Please select one</option>
-                    </select>
-                    <span asp-validation-for="Input.Country" class="text-danger"></span>
-                </div>
-                <div class="form-group">
                     <label asp-for="Input.State"></label>
                     <select asp-for="Input.State"
-                            asp-items="@(new SelectList(Model.StateList,"Id","Name")) " class="form-control">
+                            asp-items="@(new SelectList(Model.StatesList,"Id","Name")) " class="form-control">
                         <option>Please select one</option>
                     </select>
                     <span asp-validation-for="Input.State" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="Input.City"></label>
-                    <select asp-for="Input.City"
-                            asp-items="@(new SelectList(Model.CityList,"Id","Name")) " class="form-control">
+                    <select asp-for="Input.City" class="form-control" name="Input.City">
                         <option>Please select one</option>
                     </select>
                     <span asp-validation-for="Input.City" class="text-danger"></span>
                 </div>
+
+                <div class="form-group">
+                    <label asp-for="Input.Region"></label>
+                    <select asp-for="Input.Region" class="form-control" name="Input.Region">
+                        <option>Please select one</option>
+                    </select>
+                    <span asp-validation-for="Input.Region" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary">Register</button>
             </div>
         </div>
     </form>
@@ -79,4 +88,46 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(function () {
+
+            var cities = @Html.Raw(JsonConvert.SerializeObject(Model.CityList, Formatting.Indented, new JsonSerializerSettings
+                    {
+                        PreserveReferencesHandling = PreserveReferencesHandling.Objects
+                    }) as String);
+
+            var regions = @Html.Raw(JsonConvert.SerializeObject(Model.RegionList, Formatting.Indented, new JsonSerializerSettings
+                     {
+                         PreserveReferencesHandling = PreserveReferencesHandling.Objects
+                     }) as String);
+            $('#Input_State').on('change', function () {
+                $('#Input_City').html('<option>Please select one</option>')
+                $('#Input_Region').html('<option>Please select one</option>')
+                var value = $('#Input_State').val();
+                if (value > 0)
+                {
+                    $.each(cities, function () {
+                         if (this.StateId == value)
+                        {
+                            $('#Input_City').append('<option value="' + this.Id + '">' + this.City + '</option>');
+                        }
+                    })
+
+                }
+            })
+
+            $('#Input_City').on('change', function () {
+                $('#Input_Region').html('<option>Please select one</option>')
+                var value = $('#Input_City').val();
+                if (value > 0) {
+                    $.each(regions, function () {
+                        if (this.CityId == value) {
+                            $('#Input_Region').append('<option value="' + this.Id + '">' + this.Region + '</option>');
+                        }
+                    })
+                }
+            })
+        });
+
+    </script>
 }

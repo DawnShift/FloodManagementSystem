@@ -1,0 +1,62 @@
+﻿@model IEnumerable<FloodManagementSystem.ViewModels.MemberResourceDonationListViewModel>
+
+@{
+    ViewData["Title"] = "DonateResource";
+}
+
+<h1>Distribute Resource</h1>
+
+ 
+<table class="table">
+    <thead>
+        <tr> 
+            <th>
+                @Html.DisplayNameFor(model => model.TotalNeeded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ResourceDetails)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequesterName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resource)
+            </th> 
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalNeeded)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ResourceDetails)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RequesterName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Resource)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "DonateResources", new { item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,54 @@
+﻿@model FloodManagementSystem.ViewModels.MemebrResourceCollectionListViewMModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+ <h4>Change Resource Status</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="Id" class="form-control" readonly hidden />
+                <input asp-for="ResourceId" class="form-control" readonly hidden />
+            </div>
+            <div class="form-group">
+                <label asp-for="Resource" class="control-label"></label>
+                <input asp-for="Resource" class="form-control" readonly />
+                <span asp-validation-for="Resource" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalCollected" class="control-label"></label>
+                <input asp-for="TotalCollected" class="form-control" readonly />
+                <span asp-validation-for="TotalCollected" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DonaarsName" class="control-label"></label>
+                <input asp-for="DonaarsName" class="form-control" readonly />
+                <span asp-validation-for="DonaarsName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" readonly />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <select asp-for="StatusId"
+                        asp-items="@(new SelectList(Model.ResourceStatus,"Id","Name")) " class="form-control">
+                    <option>Please select one</option>
+                </select>
+                <span asp-validation-for="StatusId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div> 
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

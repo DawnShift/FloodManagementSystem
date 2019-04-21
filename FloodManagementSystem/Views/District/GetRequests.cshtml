@@ -1,0 +1,43 @@
+﻿@model IEnumerable<FloodManagementSystem.ViewModels.DistrictListViewModel>
+
+@{
+    ViewData["Title"] = "GetRequests";
+}
+
+<h1>Requests</h1>
+
+<table class="table">
+    <thead>
+        <tr> 
+            <th>
+                @Html.DisplayNameFor(model => model.Region)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resource)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalNeeded)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr> 
+                <td>
+                    @Html.DisplayFor(modelItem => item.Region)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Resource)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalNeeded)
+                </td>
+                <td>
+                    @Html.ActionLink("Distribute", "Edit", new {  item.Id })
+
+            </tr>
+        }
+    </tbody>
+</table>

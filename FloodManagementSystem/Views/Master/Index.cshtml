@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Welcome Admin</h1>
+        <p class="lead">This is your Navigation Area.</p>
+    </div>
+</div>
+
+
+
+<div id="accordion"> 
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Master Controls:
+                </button>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+
+            <div class="row" style="margin:5px;">
+                <div class="col-3">
+                    <div class="card" >
+                        <div class="card-body">
+                            <h5 class="card-title">Add New Disaster</h5>
+                            <p class="card-text">Add new Disaster to the system Master.</p>
+                            @Html.ActionLink("Add Disasters", "Disaster", "Master", null, new { @class = "card-link" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="card" >
+                        <div class="card-body">
+                            <h5 class="card-title">Add New Resource</h5>
+                            <p class="card-text">Add new Resource to system Master.</p>
+                            @Html.ActionLink("Add Resource", "Resource", "Master", null, new { @class = "card-link" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="card" >
+                        <div class="card-body">
+                            <h5 class="card-title">Add New Places</h5>
+                            <p class="card-text">Add New City,State or Region to system Master.</p>
+                            @Html.ActionLink("Add Disasters", "State", "Master", null, new { @class = "card-link" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="card" >
+                        <div class="card-body">
+                            <h5 class="card-title">Pramote a User</h5>
+                            <p class="card-text">Pramote a user to advanced Roles.</p>
+                            @Html.ActionLink("Pramote User", "PramoteUser", "Master", null, new { @class = "card-link" })
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                   Emergency Disasters:
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="row" style="margin:5px;">
+                <div class="col-3">
+                    <div class="card" >
+                        <div class="card-body">
+                            <h5 class="card-title">Register a Disaster:</h5>
+                            <p class="card-text">Register a New Disaster.</p>
+                            @Html.ActionLink("Register Disaster", "AddDisaster", "Master", null, new { @class = "card-link" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="card" >
+                        <div class="card-body">
+                            <h5 class="card-title">Disaster History:</h5>
+                            <p class="card-text">Check Disaster History here.</p>
+                            @Html.ActionLink("Disaster History", "GetAllAvailableDisasters", "Master", null, new { @class = "card-link" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

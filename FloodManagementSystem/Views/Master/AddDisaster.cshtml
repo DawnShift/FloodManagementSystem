@@ -1,0 +1,62 @@
+﻿@model FloodManagementSystem.ViewModels.DisasterDetailsviewModel
+
+@{
+    ViewData["Title"] = "AddDisaster";
+}
+<link href="~/css/chosen.min.css" rel="stylesheet" />
+<h1></h1>
+
+<h4>Add Disaster </h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddDisaster">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DisasterId" class="control-label"></label>
+                <select asp-for="DisasterId"
+                        asp-items="@(new SelectList(Model.Disasters,"Id","Name")) " class="form-control">
+                    <option>Please select one</option>
+                </select>
+                <span asp-validation-for="DisasterId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Details" class="control-label"></label>
+                <input asp-for="Details" class="form-control" />
+                <span asp-validation-for="Details" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EffectedStates" class="control-label"></label>
+                <select asp-for="EffectedStates" asp-items="@(new SelectList(Model.States,"Id","Name")) " multiple  class="form-control chosen"></select>
+                <span asp-validation-for="EffectedStates" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/chosen.jquery.min.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            jQuery(".chosen").data("placeholder", "Select Frameworks...").chosen();
+        });
+    </script>
+}

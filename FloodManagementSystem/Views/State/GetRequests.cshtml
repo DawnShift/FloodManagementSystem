@@ -1,0 +1,44 @@
+﻿@model IEnumerable<FloodManagementSystem.ViewModels.StateListViewModel>
+
+@{
+    ViewData["Title"] = "GetRequests";
+}
+
+<h4>Distribute Resources</h4>
+ 
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Resource)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Resource)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total)
+                </td>
+                <td>
+                    @Html.ActionLink("Distribute", "Edit", new { item.Id }) 
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

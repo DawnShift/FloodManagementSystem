@@ -1,20 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using FloodManagementSystem.Models;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using FloodManagementSystem.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace FloodManagementSystem.Controllers
 {
     public class HomeController : Controller
     {
-        [Authorize(Roles ="Members")]
+
         public IActionResult Index()
         {
-            return View();
+            if (HttpContext.User.Identities.First().Name == null)
+                return View();
+            else
+            {
+                if (HttpContext.User.IsInRole("Members"))
+                    return RedirectPermanent("/Members/Index");
+                if (HttpContext.User.IsInRole("Distributer"))
+                    return RedirectPermanent("/Distributer/Index");
+                if (HttpContext.User.IsInRole("District Co-Ordinator"))
+                    return RedirectPermanent("/District/Index");
+                if (HttpContext.User.IsInRole("State Co-Ordinator"))
+                    return RedirectPermanent("/State/Index"); 
+                if (HttpContext.User.IsInRole("Administrator"))
+                    return RedirectPermanent("/Master/Index");
+                return View();
+            }
         }
 
         public IActionResult Privacy()

@@ -15,7 +15,7 @@ namespace FloodManagementSystem.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.0-rtm-35687")
+                .HasAnnotation("ProductVersion", "2.2.2-servicing-10034")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -52,12 +52,8 @@ namespace FloodManagementSystem.Migrations
 
                     b.Property<int>("AccessFailedCount");
 
-                    b.Property<int?>("CityId");
-
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
-
-                    b.Property<int?>("CountryId");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256);
@@ -84,9 +80,9 @@ namespace FloodManagementSystem.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed");
 
-                    b.Property<string>("SecurityStamp");
+                    b.Property<int?>("RegionId");
 
-                    b.Property<int?>("StateId");
+                    b.Property<string>("SecurityStamp");
 
                     b.Property<bool>("TwoFactorEnabled");
 
@@ -103,7 +99,56 @@ namespace FloodManagementSystem.Migrations
                         .HasName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
+                    b.HasIndex("RegionId");
+
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("FloodManagementSystem.Models.City", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.Property<int?>("StateId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StateId");
+
+                    b.ToTable("City");
+                });
+
+            modelBuilder.Entity("FloodManagementSystem.Models.Regions", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CityId");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CityId");
+
+                    b.ToTable("Regions");
+                });
+
+            modelBuilder.Entity("FloodManagementSystem.Models.State", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("State");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -194,6 +239,27 @@ namespace FloodManagementSystem.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("FloodManagementSystem.Models.ApplicationUser", b =>
+                {
+                    b.HasOne("FloodManagementSystem.Models.Regions", "Region")
+                        .WithMany()
+                        .HasForeignKey("RegionId");
+                });
+
+            modelBuilder.Entity("FloodManagementSystem.Models.City", b =>
+                {
+                    b.HasOne("FloodManagementSystem.Models.State", "State")
+                        .WithMany("Cities")
+                        .HasForeignKey("StateId");
+                });
+
+            modelBuilder.Entity("FloodManagementSystem.Models.Regions", b =>
+                {
+                    b.HasOne("FloodManagementSystem.Models.City", "City")
+                        .WithMany("Region")
+                        .HasForeignKey("CityId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

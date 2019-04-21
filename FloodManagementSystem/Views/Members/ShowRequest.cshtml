@@ -1,0 +1,41 @@
+﻿@model IEnumerable<FloodManagementSystem.ViewModels.MemberResourceListViewModel>
+
+@{
+    ViewData["Title"] = "ShowRequest";
+}
+
+<h4>Show Request</h4>
+ 
+<table class="table">
+    <thead>
+        <tr> 
+            <th>
+                @Html.DisplayNameFor(model => model.ResourceType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Count)
+            </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.ResourceType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Count)
+            </td>
+           
+        </tr>
+}
+    </tbody>
+</table>
