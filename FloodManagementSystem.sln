@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FloodManagementSystem.Data"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{CAF1B80B-82F2-4BD5-A2C2-1C33641DDF4E}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database", "Database\Database.sqlproj", "{512EFBD6-BA5F-4FEB-A918-13B7C5A91261}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,12 @@ Global
 		{CAF1B80B-82F2-4BD5-A2C2-1C33641DDF4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAF1B80B-82F2-4BD5-A2C2-1C33641DDF4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAF1B80B-82F2-4BD5-A2C2-1C33641DDF4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{512EFBD6-BA5F-4FEB-A918-13B7C5A91261}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{512EFBD6-BA5F-4FEB-A918-13B7C5A91261}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{512EFBD6-BA5F-4FEB-A918-13B7C5A91261}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{512EFBD6-BA5F-4FEB-A918-13B7C5A91261}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{512EFBD6-BA5F-4FEB-A918-13B7C5A91261}.Release|Any CPU.Build.0 = Release|Any CPU
+		{512EFBD6-BA5F-4FEB-A918-13B7C5A91261}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
