@@ -218,7 +218,7 @@ namespace FloodManagementSystem.Controllers
             var data = (from item in resourcCollectionRepo.FilteredGet().Where(x => x.UserId == currentUser.Id)
                         select new MemberResourceListViewModel
                         {
-                            Status = Convert.ToString((Data.ResourceStatus)item.ResourceId),
+                            Status = Convert.ToString((Data.ResourceStatus)item.Status),
                             ResourceType = resourceRepo.FilteredGet().Where(x => x.Id == item.ResourceId).FirstOrDefault().Name,
                             Count = item.TotalCollected
                         }
@@ -233,7 +233,7 @@ namespace FloodManagementSystem.Controllers
             var data = (from item in resourceRequestRepo.FilteredGet().Where(x => x.UserId == currentUser.Id)
                         select new MemberResourceListViewModel
                         {
-                            Status = Convert.ToString((Data.ResourceStatus)item.ResourceId),
+                            Status = Convert.ToString((Data.ResourceStatus)item.ResourceStatus),
                             ResourceType = resourceRepo.FilteredGet().Where(x => x.Id == item.ResourceId).FirstOrDefault().Name,
                             Count = item.TotalNeeded
                         }
