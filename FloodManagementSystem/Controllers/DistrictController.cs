@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace FloodManagementSystem.Controllers
 {
@@ -94,7 +95,7 @@ namespace FloodManagementSystem.Controllers
             return View(model??new List<DistrictListViewModel>());
         }
 
-        public async System.Threading.Tasks.Task<ActionResult> Edit(int id)
+        public ActionResult Edit(int id)
         {
             var model = (from item in distributerRequestRepo.FilteredGet().Where(x => x.Id == id)
                          join resources in resourceRepo.FilteredGet() on item.ResourceId equals resources.Id
@@ -179,6 +180,24 @@ namespace FloodManagementSystem.Controllers
             };
             CityRequestsRepo.Insert(data);
             return RedirectToActionPermanent("Index");
+        }
+
+
+        public async Task<ActionResult> CheckResources()
+        {
+            System.Security.Claims.ClaimsPrincipal currentUserClaims = this.User;
+            var currentUser = await _userManager.GetUserAsync(currentUserClaims);
+            int regionId = (int)userRepo.FilteredGet().Where(x => x.Id == currentUser.Id).FirstOrDefault().RegionId;
+            int cityId = (int)regionRepo.FilteredGet().Where(x => x.Id == regionId).FirstOrDefault().CityId;
+            var availableResource = (from item in cityAuditRepo.FilteredGet().Where(x => x.CityId == cityId)
+                                     join resources in resourceRepo.FilteredGet() on item.ResourceId equals resources.Id
+                                     select new AvailableResourceViewModel
+                                     {
+                                         Id = item.Id,
+                                         Name = resources.Name,
+                                         Total = item.TotalAvailable
+                                     }).ToList();
+            return View(availableResource ?? new System.Collections.Generic.List<AvailableResourceViewModel>());
         }
 
     }

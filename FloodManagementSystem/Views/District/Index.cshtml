@@ -12,35 +12,47 @@
 
 
 <div class="row">
-    <div id="accordion">  
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Distribute/Request Resources:
-                    </button>
-                </h5>
-            </div>
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="row" style="margin:5px;"> 
+    <div class="col-12">
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Distribute/Request Resources:
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="row" style="margin:5px;">
 
-                    <div class="col-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Distributed Resources</h5>
-                                <p class="card-text">Here is the List of   Resources Request in your Area.</p>
-                                @Html.ActionLink("Distribute", "GetRequests", "District", null, new { @class = "card-link" })
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Distributed Resources</h5>
+                                    <p class="card-text">Here is the List of   Resources Request in your Area.</p>
+                                    @Html.ActionLink("Distribute", "GetRequests", "District", null, new { @class = "card-link" })
+                                </div>
                             </div>
                         </div>
-                    </div>
 
 
-                    <div class="col-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Need Help:</h5>
-                                <p class="card-text">request for Additional Resources.</p>
-                                @Html.ActionLink("Request", "RequestResource", "District", null, new { @class = "card-link" })
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Need Help:</h5>
+                                    <p class="card-text">request for Additional Resources.</p>
+                                    @Html.ActionLink("Request", "RequestResource", "District", null, new { @class = "card-link" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Available Resources:</h5>
+                                    <p class="card-text">View your available Resources.</p>
+                                    @Html.ActionLink("View Available Resources", "CheckResources", "District", null, new { @class = "card-link" })
+                                </div>
                             </div>
                         </div>
                     </div>

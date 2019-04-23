@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace FloodManagementSystem.Controllers
 {
-      [Authorize(Roles = "Administrator")]
+    [Authorize(Roles = "Administrator")]
     public class MasterController : Controller
     {
         private readonly IRepository<City> cityRepo;
@@ -27,7 +27,7 @@ namespace FloodManagementSystem.Controllers
         private readonly IHostingEnvironment _environment;
         private readonly IRepository<Data.Models.EffectedCities> ecRepos;
         private readonly UserManager<Models.ApplicationUser> _userManager;
-         
+
         public MasterController(IRepository<City> cityRepo, IRepository<Data.Models.State> stateRepo, IRepository<Regions> regionRepo,
         IRepository<Data.Models.Resources> resourceRepo, IRepository<Data.Models.Professionals> professionalRepo, IRepository<Data.Models.Disaster> disasterRepo,
         IRepository<Data.Models.DisasterDetails> ddRepo, IRepository<Data.Models.EffectedCities> ecRepos, UserManager<Models.ApplicationUser> _userManager,
@@ -49,7 +49,7 @@ namespace FloodManagementSystem.Controllers
         {
             return View();
         }
-        
+
         public ActionResult GetAllAvailableDisasters()
         {
             var activeDisaster = (from item in ddRepo.FilteredGet()
@@ -344,8 +344,6 @@ namespace FloodManagementSystem.Controllers
             var res = await _userManager.AddToRoleAsync(user, model.Role);
             return RedirectToAction("PramoteUser");
         }
-
-
-
+          
     }
 }

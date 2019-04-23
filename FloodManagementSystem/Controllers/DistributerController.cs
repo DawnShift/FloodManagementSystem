@@ -251,5 +251,21 @@ namespace FloodManagementSystem.Controllers
             return RedirectToActionPermanent("Index");
 
         }
+
+        public async Task<ActionResult> CheckResources()
+        {
+            System.Security.Claims.ClaimsPrincipal currentUserClaims = this.User;
+            var currentUser = await _userManager.GetUserAsync(currentUserClaims);
+            int regionId = (int)userRepo.FilteredGet().Where(x => x.Id == currentUser.Id).FirstOrDefault().RegionId;
+            var availableResource = (from item in auditRepo.FilteredGet().Where(x => x.RegionId == regionId)
+                                     join resources in resourceRepo.FilteredGet() on item.ResourceId equals resources.Id
+                                     select new AvailableResourceViewModel
+                                     {
+                                          Id = item.Id,
+                                           Name = resources.Name,
+                                            Total = item.TotalCountAvailable
+                                     }).ToList();
+            return View(availableResource?? new System.Collections.Generic.List<AvailableResourceViewModel>());
+        } 
     }
 }

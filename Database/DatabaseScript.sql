@@ -11,7 +11,7 @@ Post-Deployment Script Template
 */
 USE [FloodManagementSystem]
 GO
-/****** Object:  Table [dbo].[__EFMigrationsHistory]    Script Date: 21-04-2019 10:49:18 ******/
+/****** Object:  Table [dbo].[__EFMigrationsHistory]    Script Date: 23-04-2019 23:23:01 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -25,7 +25,7 @@ CREATE TABLE [dbo].[__EFMigrationsHistory](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AspNetRoleClaims]    Script Date: 21-04-2019 10:49:18 ******/
+/****** Object:  Table [dbo].[AspNetRoleClaims]    Script Date: 23-04-2019 23:23:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -41,7 +41,7 @@ CREATE TABLE [dbo].[AspNetRoleClaims](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AspNetRoles]    Script Date: 21-04-2019 10:49:18 ******/
+/****** Object:  Table [dbo].[AspNetRoles]    Script Date: 23-04-2019 23:23:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -58,7 +58,7 @@ CREATE TABLE [dbo].[AspNetRoles](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AspNetUserClaims]    Script Date: 21-04-2019 10:49:19 ******/
+/****** Object:  Table [dbo].[AspNetUserClaims]    Script Date: 23-04-2019 23:23:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -74,7 +74,7 @@ CREATE TABLE [dbo].[AspNetUserClaims](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AspNetUserLogins]    Script Date: 21-04-2019 10:49:19 ******/
+/****** Object:  Table [dbo].[AspNetUserLogins]    Script Date: 23-04-2019 23:23:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -91,7 +91,7 @@ CREATE TABLE [dbo].[AspNetUserLogins](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AspNetUserRoles]    Script Date: 21-04-2019 10:49:19 ******/
+/****** Object:  Table [dbo].[AspNetUserRoles]    Script Date: 23-04-2019 23:23:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -106,7 +106,7 @@ CREATE TABLE [dbo].[AspNetUserRoles](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AspNetUsers]    Script Date: 21-04-2019 10:49:19 ******/
+/****** Object:  Table [dbo].[AspNetUsers]    Script Date: 23-04-2019 23:23:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -136,7 +136,7 @@ CREATE TABLE [dbo].[AspNetUsers](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AspNetUserTokens]    Script Date: 21-04-2019 10:49:19 ******/
+/****** Object:  Table [dbo].[AspNetUserTokens]    Script Date: 23-04-2019 23:23:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -154,7 +154,7 @@ CREATE TABLE [dbo].[AspNetUserTokens](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[City]    Script Date: 21-04-2019 10:49:19 ******/
+/****** Object:  Table [dbo].[City]    Script Date: 23-04-2019 23:23:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -169,7 +169,7 @@ CREATE TABLE [dbo].[City](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CityAudit]    Script Date: 21-04-2019 10:49:19 ******/
+/****** Object:  Table [dbo].[CityAudit]    Script Date: 23-04-2019 23:23:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -185,7 +185,7 @@ CREATE TABLE [dbo].[CityAudit](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CityRequests]    Script Date: 21-04-2019 10:49:19 ******/
+/****** Object:  Table [dbo].[CityRequests]    Script Date: 23-04-2019 23:23:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -201,7 +201,7 @@ CREATE TABLE [dbo].[CityRequests](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Disaster]    Script Date: 21-04-2019 10:49:19 ******/
+/****** Object:  Table [dbo].[Disaster]    Script Date: 23-04-2019 23:23:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -216,7 +216,7 @@ CREATE TABLE [dbo].[Disaster](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DisasterDetails]    Script Date: 21-04-2019 10:49:19 ******/
+/****** Object:  Table [dbo].[DisasterDetails]    Script Date: 23-04-2019 23:23:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -236,7 +236,7 @@ CREATE TABLE [dbo].[DisasterDetails](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DistributerRequests]    Script Date: 21-04-2019 10:49:19 ******/
+/****** Object:  Table [dbo].[DistributerRequests]    Script Date: 23-04-2019 23:23:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -252,7 +252,7 @@ CREATE TABLE [dbo].[DistributerRequests](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[EffectedCities]    Script Date: 21-04-2019 10:49:19 ******/
+/****** Object:  Table [dbo].[EffectedCities]    Script Date: 23-04-2019 23:23:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -268,7 +268,7 @@ CREATE TABLE [dbo].[EffectedCities](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Regions]    Script Date: 21-04-2019 10:49:19 ******/
+/****** Object:  Table [dbo].[Regions]    Script Date: 23-04-2019 23:23:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -283,7 +283,7 @@ CREATE TABLE [dbo].[Regions](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ResourceAudit]    Script Date: 21-04-2019 10:49:19 ******/
+/****** Object:  Table [dbo].[ResourceAudit]    Script Date: 23-04-2019 23:23:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -301,7 +301,7 @@ CREATE TABLE [dbo].[ResourceAudit](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ResourceCollection]    Script Date: 21-04-2019 10:49:19 ******/
+/****** Object:  Table [dbo].[ResourceCollection]    Script Date: 23-04-2019 23:23:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -319,7 +319,7 @@ CREATE TABLE [dbo].[ResourceCollection](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ResourceRequest]    Script Date: 21-04-2019 10:49:19 ******/
+/****** Object:  Table [dbo].[ResourceRequest]    Script Date: 23-04-2019 23:23:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -339,7 +339,7 @@ CREATE TABLE [dbo].[ResourceRequest](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Resources]    Script Date: 21-04-2019 10:49:19 ******/
+/****** Object:  Table [dbo].[Resources]    Script Date: 23-04-2019 23:23:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -353,7 +353,7 @@ CREATE TABLE [dbo].[Resources](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ResourceStatus]    Script Date: 21-04-2019 10:49:19 ******/
+/****** Object:  Table [dbo].[ResourceStatus]    Script Date: 23-04-2019 23:23:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -367,7 +367,7 @@ CREATE TABLE [dbo].[ResourceStatus](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[State]    Script Date: 21-04-2019 10:49:19 ******/
+/****** Object:  Table [dbo].[State]    Script Date: 23-04-2019 23:23:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -381,7 +381,7 @@ CREATE TABLE [dbo].[State](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[StateAudit]    Script Date: 21-04-2019 10:49:19 ******/
+/****** Object:  Table [dbo].[StateAudit]    Script Date: 23-04-2019 23:23:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -413,6 +413,8 @@ INSERT [dbo].[AspNetUserRoles] ([UserId], [RoleId]) VALUES (N'4ad1b305-d3ca-49bc
 GO
 INSERT [dbo].[AspNetUserRoles] ([UserId], [RoleId]) VALUES (N'be39c26b-3440-4035-9e82-a0e689798a7b', N'0ab76a5d-5a52-4510-98e0-3d3c0782a4a6')
 GO
+INSERT [dbo].[AspNetUserRoles] ([UserId], [RoleId]) VALUES (N'ab67070b-1504-4fcd-97ba-6ff55acc0d36', N'343387cd-92ef-4209-aa56-15d882e14ffa')
+GO
 INSERT [dbo].[AspNetUserRoles] ([UserId], [RoleId]) VALUES (N'fbf4245a-ea6c-482b-8aeb-5bd5f0da2667', N'88d78a9a-8a74-4166-9679-23863e37e2a1')
 GO
 INSERT [dbo].[AspNetUserRoles] ([UserId], [RoleId]) VALUES (N'05b852fc-6d5f-4597-84e6-36640b3ec471', N'e86b354b-a8ab-45c2-a198-2a648ae56906')
@@ -420,6 +422,8 @@ GO
 INSERT [dbo].[AspNetUsers] ([Id], [UserName], [NormalizedUserName], [Email], [NormalizedEmail], [EmailConfirmed], [PasswordHash], [SecurityStamp], [ConcurrencyStamp], [PhoneNumber], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEnd], [LockoutEnabled], [AccessFailedCount], [FirstName], [LastName], [RegionId]) VALUES (N'05b852fc-6d5f-4597-84e6-36640b3ec471', N'admin@gmail.com', N'ADMIN@GMAIL.COM', N'admin@gmail.com', N'ADMIN@GMAIL.COM', 0, N'AQAAAAEAACcQAAAAEE2dL4jN5h+cvyd5yT6eKNRrVSZtQnjf4nX3XLCex386i8AaOJq8vTFPL3nhbSyagg==', N'4QUD7C3KTPYGYU463RWYBYASDLB4TSZD', N'627e2a2b-9d73-450b-a079-7ca8c53e0a77', NULL, 0, 0, NULL, 1, 0, NULL, NULL, NULL)
 GO
 INSERT [dbo].[AspNetUsers] ([Id], [UserName], [NormalizedUserName], [Email], [NormalizedEmail], [EmailConfirmed], [PasswordHash], [SecurityStamp], [ConcurrencyStamp], [PhoneNumber], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEnd], [LockoutEnabled], [AccessFailedCount], [FirstName], [LastName], [RegionId]) VALUES (N'4ad1b305-d3ca-49bc-a609-612cf49d7923', N'distributer@gmail.com', N'DISTRIBUTER@GMAIL.COM', N'distributer@gmail.com', N'DISTRIBUTER@GMAIL.COM', 0, N'AQAAAAEAACcQAAAAEDjWDMlttRuy2P+njdZxhzo06wX5+jp5dp0Sxlg+knknzx7UeX75EwKO5JoQTnPi7g==', N'4ARE6WYBC2MI3Q7ZLM342VWXVVNRLD4X', N'2d2d66d7-1818-4955-b421-d96df366dee2', N'9947543407', 0, 0, NULL, 1, 0, N'Distributer', N'Default', 2)
+GO
+INSERT [dbo].[AspNetUsers] ([Id], [UserName], [NormalizedUserName], [Email], [NormalizedEmail], [EmailConfirmed], [PasswordHash], [SecurityStamp], [ConcurrencyStamp], [PhoneNumber], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEnd], [LockoutEnabled], [AccessFailedCount], [FirstName], [LastName], [RegionId]) VALUES (N'ab67070b-1504-4fcd-97ba-6ff55acc0d36', N'state@gmail.com', N'STATE@GMAIL.COM', N'state@gmail.com', N'STATE@GMAIL.COM', 0, N'AQAAAAEAACcQAAAAECJJEro46m0a5Z1ac/vYRxeSbMRdlpnQ+dUDmN/OXk/uVONAnAeknTIKy9GANd+0pw==', N'LQBZS2GH6JJTLY76LYVAD67V32NB3WMU', N'e482cb3a-9388-4ebd-8009-d1dba33266cd', N'2345689654', 0, 0, NULL, 1, 0, N'State', N'Co-Coordinator', 4)
 GO
 INSERT [dbo].[AspNetUsers] ([Id], [UserName], [NormalizedUserName], [Email], [NormalizedEmail], [EmailConfirmed], [PasswordHash], [SecurityStamp], [ConcurrencyStamp], [PhoneNumber], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEnd], [LockoutEnabled], [AccessFailedCount], [FirstName], [LastName], [RegionId]) VALUES (N'be39c26b-3440-4035-9e82-a0e689798a7b', N'member@gmail.com', N'MEMBER@GMAIL.COM', N'member@gmail.com', N'MEMBER@GMAIL.COM', 0, N'AQAAAAEAACcQAAAAEOOSC9+EAe1ls7e9t4Hx+1yOpLHyvs5pmU7ZP2S4UiHa7P5nn3jPeUPj2DvWeWkrYQ==', N'VQOYD2CWUF6XN2LZD24536KU77EUODRO', N'5fe62e23-72d7-46fd-9999-e0e6a34336b7', N'9947543407', 0, 0, NULL, 1, 0, N'Rahul', N'SR', 2)
 GO
@@ -439,7 +443,9 @@ SET IDENTITY_INSERT [dbo].[City] OFF
 GO
 SET IDENTITY_INSERT [dbo].[CityAudit] ON 
 GO
-INSERT [dbo].[CityAudit] ([Id], [resourceId], [TotalAvailable], [CityId]) VALUES (1, 1, 30, 2)
+INSERT [dbo].[CityAudit] ([Id], [resourceId], [TotalAvailable], [CityId]) VALUES (1, 1, 40, 2)
+GO
+INSERT [dbo].[CityAudit] ([Id], [resourceId], [TotalAvailable], [CityId]) VALUES (2, 3, 50, 2)
 GO
 SET IDENTITY_INSERT [dbo].[CityAudit] OFF
 GO
@@ -491,6 +497,8 @@ INSERT [dbo].[ResourceAudit] ([Id], [ResourceId], [TotalCountAvailable], [Region
 GO
 INSERT [dbo].[ResourceAudit] ([Id], [ResourceId], [TotalCountAvailable], [RegionId], [CityId], [StateId]) VALUES (2, 2, 50, 2, 2, 1)
 GO
+INSERT [dbo].[ResourceAudit] ([Id], [ResourceId], [TotalCountAvailable], [RegionId], [CityId], [StateId]) VALUES (3, 3, 38, 2, 2, 1)
+GO
 SET IDENTITY_INSERT [dbo].[ResourceAudit] OFF
 GO
 SET IDENTITY_INSERT [dbo].[ResourceCollection] ON 
@@ -498,6 +506,8 @@ GO
 INSERT [dbo].[ResourceCollection] ([Id], [ResourceId], [TotalCollected], [RgionId], [Status], [UserId]) VALUES (1, 1, 23, 2, 4, N'be39c26b-3440-4035-9e82-a0e689798a7b')
 GO
 INSERT [dbo].[ResourceCollection] ([Id], [ResourceId], [TotalCollected], [RgionId], [Status], [UserId]) VALUES (2, 2, 50, 2, 4, N'be39c26b-3440-4035-9e82-a0e689798a7b')
+GO
+INSERT [dbo].[ResourceCollection] ([Id], [ResourceId], [TotalCollected], [RgionId], [Status], [UserId]) VALUES (3, 3, 12, 2, 4, N'be39c26b-3440-4035-9e82-a0e689798a7b')
 GO
 SET IDENTITY_INSERT [dbo].[ResourceCollection] OFF
 GO
@@ -510,6 +520,10 @@ GO
 INSERT [dbo].[ResourceRequest] ([Id], [RequestDetails], [ResourceId], [TotalNeeded], [RegionId], [DisasterDetailsId], [ResourceStatus], [UserId]) VALUES (3, N'sadasd', 1, 22, 2, 1, 1, N'be39c26b-3440-4035-9e82-a0e689798a7b')
 GO
 INSERT [dbo].[ResourceRequest] ([Id], [RequestDetails], [ResourceId], [TotalNeeded], [RegionId], [DisasterDetailsId], [ResourceStatus], [UserId]) VALUES (4, N'adsadasd', 1, 22, 2, 1, 1, N'be39c26b-3440-4035-9e82-a0e689798a7b')
+GO
+INSERT [dbo].[ResourceRequest] ([Id], [RequestDetails], [ResourceId], [TotalNeeded], [RegionId], [DisasterDetailsId], [ResourceStatus], [UserId]) VALUES (9, N'ssd', 3, 12, 2, 1, 4, N'be39c26b-3440-4035-9e82-a0e689798a7b')
+GO
+INSERT [dbo].[ResourceRequest] ([Id], [RequestDetails], [ResourceId], [TotalNeeded], [RegionId], [DisasterDetailsId], [ResourceStatus], [UserId]) VALUES (10, N'Need more Items', 3, 12, 2, 1, 4, N'be39c26b-3440-4035-9e82-a0e689798a7b')
 GO
 SET IDENTITY_INSERT [dbo].[ResourceRequest] OFF
 GO
@@ -547,9 +561,11 @@ SET IDENTITY_INSERT [dbo].[State] OFF
 GO
 SET IDENTITY_INSERT [dbo].[StateAudit] ON 
 GO
-INSERT [dbo].[StateAudit] ([Id], [StateId], [ResourceId], [TotalAvailable]) VALUES (1, 1, 1, -1)
+INSERT [dbo].[StateAudit] ([Id], [StateId], [ResourceId], [TotalAvailable]) VALUES (1, 1, 1, 0)
 GO
 INSERT [dbo].[StateAudit] ([Id], [StateId], [ResourceId], [TotalAvailable]) VALUES (2, 1, 2, 22)
+GO
+INSERT [dbo].[StateAudit] ([Id], [StateId], [ResourceId], [TotalAvailable]) VALUES (3, 1, 3, 150)
 GO
 SET IDENTITY_INSERT [dbo].[StateAudit] OFF
 GO
@@ -699,11 +715,6 @@ REFERENCES [dbo].[Regions] ([Id])
 GO
 ALTER TABLE [dbo].[ResourceRequest] CHECK CONSTRAINT [FK_ResourceRequest_Regions]
 GO
-ALTER TABLE [dbo].[ResourceRequest]  WITH CHECK ADD  CONSTRAINT [FK_ResourceRequest_ResourceStatus] FOREIGN KEY([Id])
-REFERENCES [dbo].[ResourceStatus] ([Id])
-GO
-ALTER TABLE [dbo].[ResourceRequest] CHECK CONSTRAINT [FK_ResourceRequest_ResourceStatus]
-GO
 ALTER TABLE [dbo].[StateAudit]  WITH CHECK ADD  CONSTRAINT [FK_StateAudit_Resources] FOREIGN KEY([ResourceId])
 REFERENCES [dbo].[Resources] ([Id])
 GO
@@ -714,7 +725,7 @@ REFERENCES [dbo].[State] ([Id])
 GO
 ALTER TABLE [dbo].[StateAudit] CHECK CONSTRAINT [FK_StateAudit_State]
 GO
-/****** Object:  StoredProcedure [dbo].[GetCityRequests]    Script Date: 21-04-2019 10:49:19 ******/
+/****** Object:  StoredProcedure [dbo].[GetCityRequests]    Script Date: 23-04-2019 23:23:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -729,7 +740,7 @@ BEGIN
 	  select * from [dbo].[CityRequests] where [CityId] in(select Id from [dbo].[City] where StateId = @stateId)
 END
 GO
-/****** Object:  StoredProcedure [dbo].[GetRegionalRequests]    Script Date: 21-04-2019 10:49:19 ******/
+/****** Object:  StoredProcedure [dbo].[GetRegionalRequests]    Script Date: 23-04-2019 23:23:03 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON

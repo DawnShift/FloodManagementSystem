@@ -12,95 +12,99 @@
 
 
 
-<div id="accordion">
-    @if (Model.Disasters.Count > 0)
-    {
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Donate Items to Needy:
-                    </button>
-                </h5>
-            </div>
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="row" style="margin:5px;">
-                    @foreach (var item in Model.Disasters)
-                    {
+<div class="row">
+    <div class="col-12">
+        <div id="accordion">
+            @if (Model.Disasters.Count > 0)
+            {
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Donate Items to Needy:
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="row" style="margin:5px;">
+                            @foreach (var item in Model.Disasters)
+                            {
+
+                                <div class="col-3">
+                                    <div class="card">
+                                        <img class="card-img-top" src="@item.ImgURL" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">@item.Name</h5>
+                                            <p class="card-text">@item.Details </p>
+                                            @Html.ActionLink("Donate", "DonateResource", "Members", new { disasterDetailsId = Model.Requests.DisasterDetailsId }, new { @class = "btn btn-primary" })
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+            @if (Model.Requests.IsEffected)
+            {
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Request Help:
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+
+                        <div class="row" style="margin:5px;">
+                            <div class="col-3">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Need Help</h5>
+                                        <p class="card-text">just put on  a Request for the item you want.</p>
+                                        @Html.ActionLink("Request", "RequestResource", "Members", new { disasterDetailsId = Model.Requests.DisasterDetailsId }, new { @class = "card-link" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            }
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Your History:
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="row" style="margin:5px;">
+                        <div class="col-3">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Your Donation History:</h5>
+                                    <p class="card-text">Check your Total Donation History here.</p>
+                                    @Html.ActionLink("Donation History", "ShowDonataions", "Members", new { disasterDetailsId = Model.Requests.DisasterDetailsId }, new { @class = "card-link" })
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="col-3">
-                            <div class="card">
-                                <img class="card-img-top" src="@item.ImgURL" alt="Card image cap">
+                            <div class="card" style="width: 18rem;">
                                 <div class="card-body">
-                                    <h5 class="card-title">@item.Name</h5>
-                                    <p class="card-text">@item.Details </p>
-                                    @Html.ActionLink("Donate", "DonateResource", "Members", new { disasterDetailsId = Model.Requests.DisasterDetailsId }, new { @class = "btn btn-primary" })
-                                 </div>
+                                    <h5 class="card-title">Your Request History:</h5>
+                                    <p class="card-text">Check your Total Request History here.</p>
+                                    @Html.ActionLink("Request History", "ShowRequest", "Members", new { disasterDetailsId = Model.Requests.DisasterDetailsId }, new { @class = "card-link" })
+                                </div>
                             </div>
                         </div>
-                    }
-                </div>
-            </div>
-        </div>
-    }
-    @if (Model.Requests.IsEffected)
-    {
-        <div class="card">
-            <div class="card-header" id="headingTwo">
-                <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Request Help:
-                    </button>
-                </h5>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
 
-                <div class="row" style="margin:5px;">
-                    <div class="col-3">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Need Help</h5>
-                                <p class="card-text">just put on  a Request for the item you want.</p>
-                                @Html.ActionLink("Request","RequestResource", "Members", new { disasterDetailsId = Model.Requests.DisasterDetailsId },new{@class= "card-link" }) 
-                            </div>
-                        </div>
                     </div>
                 </div>
-
-            </div>
-        </div>
-    }
-    <div class="card">
-        <div class="card-header" id="headingThree">
-            <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Your History:
-                </button>
-            </h5>
-        </div>
-
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-            <div class="row" style="margin:5px;">
-                <div class="col-3">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Your Donation History:</h5>
-                            <p class="card-text">Check your Total Donation History here.</p>
-                            @Html.ActionLink("Donation History", "ShowDonataions", "Members", new { disasterDetailsId = Model.Requests.DisasterDetailsId }, new { @class = "card-link" })
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Your Request History:</h5>
-                            <p class="card-text">Check your Total Request History here.</p>
-                            @Html.ActionLink("Request History", "ShowRequest", "Members", new { disasterDetailsId = Model.Requests.DisasterDetailsId }, new { @class = "card-link" })
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>

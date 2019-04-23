@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -183,6 +184,23 @@ namespace FloodManagementSystem.Controllers
                 stateAuditRepo.Update(resource);
             }
             return RedirectToActionPermanent("Index");
+        }
+
+            public async Task<ActionResult> CheckResources()
+        {
+            System.Security.Claims.ClaimsPrincipal currentUserClaims = this.User;
+            var currentUser = await _userManager.GetUserAsync(currentUserClaims);
+            int regionId = (int)userRepo.FilteredGet().Where(x => x.Id == currentUser.Id).FirstOrDefault().RegionId;
+            int stateId = (int)regionRepo.FilteredGet().Where(x => x.Id == regionId).Include(y=>y.City).FirstOrDefault().City.StateId;
+           var availableResource = (from item in stateAuditRepo.FilteredGet().Where(x => x.StateId == stateId)
+                                     join resources in resourceRepo.FilteredGet() on item.ResourceId equals resources.Id
+                                     select new AvailableResourceViewModel
+                                     {
+                                         Id = item.Id,
+                                         Name = resources.Name,
+                                         Total = item.TotalAvailable
+                                     }).ToList();
+            return View(availableResource ?? new System.Collections.Generic.List<AvailableResourceViewModel>());
         }
 
     }
